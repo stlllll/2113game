@@ -9,7 +9,7 @@ Game rules: The aim of this game is to complete as many tasks as possible.  (See
 
 Game Process: The game process includes 8 rounds, and each round consists of 3 sessions.
 Each round represents a semester, and the 3 sessions are "semester start","midterm" and "Final Exam Period" respectively.
-When a new game starts, the player needs to choose to be a student from 1.local 2.India 3.Mainland China 4.Korea, and start his/her university life with some special initial abilities. (See below to find details about ability)
+When a new game starts, the player needs to choose to be a student from 1.local 2.India 3.Mainland China 4.Korea, and start his/her university life with some special initial abilities and some random abilities. (See below to find details about ability)
 Then the player enters the fisrt round, a semester.
             
 round process:
@@ -50,6 +50,15 @@ Every ability of student is measured by a score.
 Overally, with stronger abilities, the player has a higher probability to accomplish tasks at the end of a semester.
 Some tasks only depend on one aibility. For example, the probality of accomplishing 'GPA higher than 4' only depends on 'learning ability'. 
 Some tasks are multi-ability dependent. Like the probability of accomplishing 'enjoy hall life' depends on 'charm' and 'social skills'.
+The wealth is randomly generated and can be changed by some random events.
+With the same time spent on shopping, a student having higher wealth point can develop more charm.
+
+
+Special abilities:
+local student have better social skills.
+mainland student can have additional time spent on learning.
+Korean student have more charm.
+Indian student will develop ability faster if they choose Science or Engineering faculty.
 
 Spending time on certain things can improve the player's corresponding ability. 
 For instance, If a player choose to spend more time on studying, his/her learning ability will be improved. 
