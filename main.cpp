@@ -8,7 +8,6 @@ struct student{
    string name;
    string faculty;
    int round;
-   int session;
    int targets[3]; //0.join student associations 1.fall in love 2.gpa higher than 4 3.enjoy hall life 4.do part time job 5.faculty task
    int ability[5]; //0.learning 1.executive 2.charm 3.social 4.wealth
    int tasks[6]; //same as targets, represents how many times a student finished a certain task.
@@ -24,7 +23,7 @@ void read_memory(vector<student> & records){
       string name;
       while (fin >> name){
             student record(name);
-            fin>>record.faculty>>record.round>>record.session;
+            fin>>record.faculty>>record.round;
             for (int k=0;k<3;k++){
                 fin>>record.targets[k];
             }
@@ -39,6 +38,7 @@ void read_memory(vector<student> & records){
       fin.close();
 }
   
+
  int main(){
    read_memory(records);
 
@@ -52,6 +52,8 @@ void read_memory(vector<student> & records){
    }
  
    student player("a");  //randomly defined, to avoid bugs, no need to worru
+ 
+int change;
 
    if (game=="New"){
       cout<<"Let's start a new game!"<<endl;
@@ -81,7 +83,6 @@ void read_memory(vector<student> & records){
       //Apply a function to randomly choose a faculty for the student
       player.name=name;
       player.round=0;
-      player.session=0;
       cout<<"Please choose a background for the character: (Local/India/Mainland/Korea)"<<endl;
       string background;
       cin>>background;
@@ -92,8 +93,6 @@ void read_memory(vector<student> & records){
       
       cout<<"Congratulations!! You are admitted into The University of Hong Kong"<<endl;
    }
-
-
    else {
       cout<<"which one do you want to continue?"<<endl;
       for (int i=0;i<records.size();i++){
@@ -103,13 +102,12 @@ void read_memory(vector<student> & records){
       cout<<"Please input a name: "<<endl;
       string name;
       int a=0;
-      int j;
       while (true){
             cin>>name;
 	    for (int i=0;i<records.size();i++){
 	        if (name==records[i].name){
 		   a=1;
-		   j=i;
+		   change=i;
 		   break;
 		}
 	    }
@@ -120,22 +118,73 @@ void read_memory(vector<student> & records){
 	         break;
 	    }
       }
-      player=records[j];
-      cout<<player.faculty<<endl;
+      player=records[change];
    }
    
+ string faculties[]={"science","engineer","law","business","art","social science"};
+ string fac_task[]={"Be a research assistant","Be a research assistant","Intern at a law firm","Find a job","Publish a paper","Publish a paper"};
+ int fac_task_num;
+ for (int i=0;i<6;i++){
+     if (faculties[i]==player.faculty){
+        fac_task_num=i;
+	break;
+     }
+ }
 
-
+ //Now we go into a round
  while (player.round<8){
+   for (int i=0;i<5;i++){
+       player.ability[i]=0;
+   }
        cout<<player.name<<", ";
        cout<<"you are a year "<<((player.round-(player.round%2))/2)+1<<" student"<<endl;
        cout<<"Now is semester "<<((player.round)%2)+1<<endl;
        cout<<"Wish you can get what you want in University life"<<endl;
-       cout<<"Choose three tasks you want to finish during this semester"<<endl;
-       cout<<"(join student associations/fall in love/gpa higher than 4/enjoy hall life/do part time job/";
-       
+       cout<<"Choose three tasks you want to finish during this semester (please input the number like (1 2 3))"<<endl;
+       cout<<"(1.join student associations 2.fall in love 3.gpa higher than 4 4.enjoy hall life 5.do part time job 6.";
+       cout<<fac_task[fac_task_num]<<")"<<endl;
+       int task;
+       for (int i=0;i<3;i++){
+           cin>>task;
+	   player.targets[i]=task-1;
+       }
 
-       
+       //session begin
+       for (int m=0;m<3;m++){
+           if (m==0){
+	      cout<<"It's September 1st today!!! Semester start!!!"<<endl;
+           }
+	   else if (m==1){
+	      cout<<"The midterm is approaching!!!"<<endl;
+	   }
+	   else if (m==2){
+	      cout<<"Final exam will be held in two days!!!"<<endl;
+	   }
+	   //Apply fuction to happen some unexpected things and their influence
+           int time[4];
+	   while (true){
+	   cout<<"You have a total time of 20! How you decide to spend them?"<<endl;
+	   cout<<"The time you decide to spend on studying: "<<endl;
+	   cin>>time[0];
+	   cout<<"The time you decide to spend on shopping: "<<endl;
+	   cin>>time[1];
+	   cout<<"The time you decide to spend on socializing: "<<endl;
+	   cin>>time[2];
+	   cout<<"The time you decide to spend for student associations: "<<endl;
+	   cin>>time[3];
+	   if (time[0]+time[1]+time[2]+time[3]==20){
+	      break;
+	   }
+	   cout<<"the total time is wrong,please input again"<<endl;
+           }
+	   //Apply functions to improve student's ability for this semester.
+ 
+       }
+
+       //Apply functions to calculate if the student finish his targets tasks
+       cout<<"Wow, you've finished"<<endl;
+       //cout what he has finished here
+       //Add what he has finished to the player.tasks 
        player.round=player.round+1;
        cout<<"Do you want to exit now? (Yes/No)"<<endl;
        string answer;
@@ -144,5 +193,23 @@ void read_memory(vector<student> & records){
           break;
        }
  }
+
+ //I save the game here (save function found in former codes)
+ if (game=="New"){
+    ofstream fout;
+    fout.open("memory.txt",ios::app);
+    fout<<player.name<<" "<<player.faculty<<" "<<player.round<<" ";
+    for (int i=0;i<3;i++){
+        fout<<player.targets[i];
+    }
+ }
+ else{
+    records[change]=player;
+    ofstream fout;
+    fout.open("memory.txt");
+    fout<<records[0].name;
+    fout.close();
+ }
+ 
  return 0;
  }
