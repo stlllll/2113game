@@ -13,7 +13,7 @@ When a new game starts, the player needs to choose to be a student from 1.local 
 Then the player enters the fisrt round, a semester.
             
 round process:
-1.choose 1~4 tasks as "target tasks" for this semester.
+1.choose 3 tasks as "target tasks" for this semester.
 2.go through sessions for three times.
 
 session process:
