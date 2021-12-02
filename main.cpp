@@ -329,7 +329,11 @@ int change;
        }
 
        //(FJH)Apply functions to calculate if the student finish his targets tasks
-	 
+	 if (player.string=="science"){}
+	 if (player.string=="engineering"){}
+	 if (player.string=="law"){}
+	 if (player.string=="art"){}
+	 if (player.string=="social science"){}
        cout<<"Wow, you've finished"<<endl;
        //(FJH)cout what he has finished here
        //(FJH)Add what he has finished to the player.tasks 
