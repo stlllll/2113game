@@ -80,13 +80,13 @@ int change;
 	}
       }
 
-      //Apply a function to randomly choose a faculty for the student
+      //(FJH)Apply a function to randomly choose a faculty for the student
       player.name=name;
       player.round=0;
       cout<<"Please choose a background for the character: (Local/India/Mainland/Korea)"<<endl;
       string background;
       cin>>background;
-      //Apply a function to initialize the ability for the student basing on his/her background
+      //(FJH)Apply a function to initialize the ability for the student basing on his/her background
       for (int i=0;i<6;i++){
           player.tasks[i]=0;
       }
@@ -160,7 +160,7 @@ int change;
 	   else if (m==2){
 	      cout<<"Final exam will be held in two days!!!"<<endl;
 	   }
-	   //Apply fuction to happen some unexpected things and their influence
+	   //(FJH)Apply fuction to happen some unexpected things and their influence
            int time[4];
 	   while (true){
 	   cout<<"You have a total time of 20! How you decide to spend them?"<<endl;
@@ -177,14 +177,14 @@ int change;
 	   }
 	   cout<<"the total time is wrong,please input again"<<endl;
            }
-	   //Apply functions to improve student's ability for this semester.
+	   //(FJH)Apply functions to improve student's ability for this semester.
  
        }
 
-       //Apply functions to calculate if the student finish his targets tasks
+       //(FJH)Apply functions to calculate if the student finish his targets tasks
        cout<<"Wow, you've finished"<<endl;
-       //cout what he has finished here
-       //Add what he has finished to the player.tasks 
+       //(FJH)cout what he has finished here
+       //(FJH)Add what he has finished to the player.tasks 
        player.round=player.round+1;
        cout<<"Do you want to exit now? (Yes/No)"<<endl;
        string answer;
