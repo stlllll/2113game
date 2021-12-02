@@ -225,7 +225,7 @@ int change;
 	for (int j=0;j<6;j++){
 	    fout<<records[i].tasks[j]<<" ";
 	}
-	cout<<endl;
+	fout<<endl;
     }
     fout.close();
  }
