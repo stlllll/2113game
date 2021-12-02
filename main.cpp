@@ -200,14 +200,33 @@ int change;
     fout.open("memory.txt",ios::app);
     fout<<player.name<<" "<<player.faculty<<" "<<player.round<<" ";
     for (int i=0;i<3;i++){
-        fout<<player.targets[i];
+        fout<<player.targets[i]<<" ";
     }
+    for (int i=0;i<5;i++){
+        fout<<player.ability[i]<<" ";
+    }
+    for (int i=0;i<6;i++){
+        fout<<player.tasks[i]<<" ";
+    }
+    fout.close();
  }
  else{
     records[change]=player;
     ofstream fout;
     fout.open("memory.txt");
-    fout<<records[0].name;
+    for (int i=0;i<records.size();i++){
+        fout<<records[i].name<<" "<<records[i].faculty<<" "<<records[i].round<<" ";
+	for (int j=0;j<3;j++){
+	    fout<<records[i].targets[j]<<" ";
+	}
+	for (int j=0;j<5;j++){
+	    fout<<records[i].ability[j]<<" ";
+	}
+	for (int j=0;j<6;j++){
+	    fout<<records[i].tasks[j]<<" ";
+	}
+	cout<<endl;
+    }
     fout.close();
  }
  
