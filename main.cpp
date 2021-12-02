@@ -51,7 +51,7 @@ void read_memory(vector<student> & records){
       cin>>game;
    }
  
-   student player("a");  //randomly defined, to avoid bugs, no need to worru
+   student player("a");  //randomly defined, to avoid bugs, no need to worry
  
 int change;
 
@@ -80,13 +80,35 @@ int change;
 	}
       }
 
-      //(FJH)Apply a function to randomly choose a faculty for the student
+      //(FJH)Apply a function for player to choose a faculty for the student
+	   while (true){
+		   cout<<"Please choose your faculty by type in number: "<<endl;
+	           cout<<"1. Science Faculty"<<endl;
+		   cout<<"2. Engineering Faculty"<<endl;
+		   cout<<"3. Law Faculty"<<endl;
+	           cout<<"4. Bussiness Faculty"<<endl;
+		   cout<<"5. Art Facuty"<<endl;
+		   cout<<"6. Social Science Faculty"<<endl;
+		   string faculty_num;
+		   cin>>faculty_num;
+		   if (faculty_num==1){player.faculty="science"; break;}
+		   else if (faculty_num==2){player.faculty="engineering"; break;}
+		   else if (faculty_num==3){player.faculty="law"; break;}
+		   else if (faculty_num==4){player.faculty="business"; break;}
+		   else if (faculty_num==5){player.faculty="art"; break;}
+		   else if (faculty_num==6){player.faculty="social science"; break;}
+		   else {cout<<"Wrong input! Think again before you choose your faculty. Note that you need to type in number but not alphabet";}
+	   }
+      //The end of this faculty choosing function	   
+	   
       player.name=name;
       player.round=0;
       cout<<"Please choose a background for the character: (Local/India/Mainland/Korea)"<<endl;
       string background;
       cin>>background;
       //(FJH)Apply a function to initialize the ability for the student basing on his/her background
+	   
+      // end of ability initialization based on background
       for (int i=0;i<6;i++){
           player.tasks[i]=0;
       }
@@ -160,7 +182,9 @@ int change;
 	   else if (m==2){
 	      cout<<"Final exam will be held in two days!!!"<<endl;
 	   }
-	   //(FJH)Apply fuction to happen some unexpected things and their influence
+	   //(FJH)Apply fuction to happen some unexpected eventes and their influence
+	       
+	   //end of unexpected events function
            int time[4];
 	   while (true){
 	   cout<<"You have a total time of 20! How you decide to spend them?"<<endl;
