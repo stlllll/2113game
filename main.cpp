@@ -3,6 +3,8 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 struct student{  //use struct to store the information of a student.
    string name;
@@ -97,7 +99,7 @@ int change;
 		   else if (faculty_num==4){player.faculty="business"; break;}
 		   else if (faculty_num==5){player.faculty="art"; break;}
 		   else if (faculty_num==6){player.faculty="social science"; break;}
-		   else {cout<<"Wrong input! Think again before you choose your faculty. Note that you need to type in number but not alphabet";}
+		   else {cout<<"Wrong input! Think again before you choose your faculty. Note that you need to type in number but not alphabet"<<endl;}
 	   }
       //The end of this faculty choosing function	   
 	   
@@ -107,7 +109,13 @@ int change;
       string background;
       cin>>background;
       //(FJH)Apply a function to initialize the ability for the student basing on his/her background
-	   
+      while  (True){
+      if (background=="Local"){break;}
+      else if (background=="Mainland"){break;}
+      else if (background=="India"){break;}
+      else if (background=="Korea"){break;}
+      else{cout<<"Wrong input! please input a right format background. Note that you need to type in a word with uppercase first character."<<endl;}
+      }
       // end of ability initialization based on background
       for (int i=0;i<6;i++){
           player.tasks[i]=0;
@@ -156,7 +164,7 @@ int change;
  //Now we go into a round
  while (player.round<8){
    for (int i=0;i<5;i++){
-       player.ability[i]=0;
+       player.ability[i]=10;
    }
        cout<<player.name<<", ";
        cout<<"you are a year "<<((player.round-(player.round%2))/2)+1<<" student"<<endl;
@@ -172,19 +180,130 @@ int change;
        }
 
        //session begin
-       for (int m=0;m<3;m++){
+         srand(time(NULL));
+	 
+	 for (int m=0;m<3;m++){
            if (m==0){
 	      cout<<"It's September 1st today!!! Semester start!!!"<<endl;
+	      if (rand() % 37 == 1){
+		      cout<<"You are rewarded for scholarship! You weatlth inceases."<<endl;
+		      player.ability[4] += 5;}
+	      if (rand() % 37 == 2){
+		      cout<<"You made a new friend. Remember, friends are the family you choose. You are more social than before."<<endl;
+	      		player.ability[3]+=5;}
+	      if (rand() % 37== 2){
+		      cout<<"You are getting more and more confident. Confidence builds your charm."<<endl;
+	      		player.ability[2]+=5;}
+	      if (rand() % 37 ==3){
+		      cout<<"You are inspired by the saying 'Just do it'. Your learn to execute without hesitation."<<endl;
+		      player.ability[1]+=5;}
+	      if (rand() % 37 == 4){
+		      cout<<"You are learning how to learn, and you really learn something. You develop more learning ability."<<endl;
+		      player.ability[0]+=5;}
+	      if (rand() % 37 == 5){
+		      cout<<"You took a test of psychology department and you won some coupons. More wealth!"<<endl;
+		      player.ability[4] +=3;}
+	      if (rand() % 37 == 6){
+		      cout<<"You climbed the Victoria peak with your hallmates. You are getting more familiar with them."<<endl;
+		      player.ability[3]+=3;}
+	      if (rand() % 37 == 7){
+		      cout<<"You led a group project and learnt more about execution."<<endl;
+		      player.ability[2]+=3;}
+	      if (rand() % 37 == 8){
+		      cout<<"Shopping time for the Black Friday! You are less wealthy but you are more charming now."<<endl;
+		      player.ability[4]-=2;
+		      player.ability[2]+=5;}
+	      if (rand() % 37 == 9){
+		      cout<<"You encounter a free rider when doing group project. You have to spare some time but you learn more about execution."<<endl;
+		      player.ability[0]+=5;
+		      player.ability[2]-=2;}
+	      if (rand() % 37 == 10){
+		      cout<<"You drank with your friends at the seaside of Kennedy town. You get more social, but you are really sick after that."<<endl;
+		      player.ability[2]+=5;
+		      player.ability[1]-=3;
+		      player.ability[0]-=5;}
            }
 	   else if (m==1){
 	      cout<<"The midterm is approaching!!!"<<endl;
+		   if (rand() % 37 == 1){
+		      cout<<"You are rewarded for scholarship! You weatlth inceases."<<endl;
+		      player.ability[4] += 5;}
+	      if (rand() % 37 == 2){
+		      cout<<"You made a new friend. Remember, friends are the family you choose. You are more social than before."<<endl;
+	      		player.ability[3]+=5;}
+	      if (rand() % 37== 2){
+		      cout<<"You are getting more and more confident. Confidence builds your charm."<<endl;
+	      		player.ability[2]+=5;}
+	      if (rand() % 37 ==3){
+		      cout<<"You are inspired by the saying 'Just do it'. Your learn to execute without hesitation."<<endl;
+		      player.ability[1]+=5;}
+	      if (rand() % 37 == 4){
+		      cout<<"You are learning how to learn, and you really learn something. You develop more learning ability."<<endl;
+		      player.ability[0]+=5;}
+	      if (rand() % 37 == 5){
+		      cout<<"You took a test of psychology department and you won some coupons. More wealth!"<<endl;
+		      player.ability[4] +=3;}
+	      if (rand() % 37 == 6){
+		      cout<<"You climbed the Victoria peak with your hallmates. You are getting more familiar with them."<<endl;
+		      player.ability[3]+=3;}
+	      if (rand() % 37 == 7){
+		      cout<<"You led a group project and learnt more about execution."<<endl;
+		      player.ability[2]+=3;}
+	      if (rand() % 37 == 8){
+		      cout<<"Shopping time for the Black Friday! You are less wealthy but you are more charming now."<<endl;
+		      player.ability[4]-=2;
+		      player.ability[2]+=5;}
+	      if (rand() % 37 == 9){
+		      cout<<"You encounter a free rider when doing group project. You have to spare some time but you learn more about execution."<<endl;
+		      player.ability[0]+=5;
+		      player.ability[2]-=2;}
+	      if (rand() % 37 == 10){
+		      cout<<"You drank with your friends at the seaside of Kennedy town. You get more social, but you are really sick after that."<<endl;
+		      player.ability[2]+=5;
+		      player.ability[1]-=3;
+		      player.ability[0]-=5;}
 	   }
 	   else if (m==2){
 	      cout<<"Final exam will be held in two days!!!"<<endl;
+		   if (rand() % 37 == 1){
+		      cout<<"You are rewarded for scholarship! You weatlth inceases."<<endl;
+		      player.ability[4] += 5;}
+	      if (rand() % 37 == 2){
+		      cout<<"You made a new friend. Remember, friends are the family you choose. You are more social than before."<<endl;
+	      		player.ability[3]+=5;}
+	      if (rand() % 37== 2){
+		      cout<<"You are getting more and more confident. Confidence builds your charm."<<endl;
+	      		player.ability[2]+=5;}
+	      if (rand() % 37 ==3){
+		      cout<<"You are inspired by the saying 'Just do it'. Your learn to execute without hesitation."<<endl;
+		      player.ability[1]+=5;}
+	      if (rand() % 37 == 4){
+		      cout<<"You are learning how to learn, and you really learn something. You develop more learning ability."<<endl;
+		      player.ability[0]+=5;}
+	      if (rand() % 37 == 5){
+		      cout<<"You took a test of psychology department and you won some coupons. More wealth!"<<endl;
+		      player.ability[4] +=3;}
+	      if (rand() % 37 == 6){
+		      cout<<"You climbed the Victoria peak with your hallmates. You are getting more familiar with them."<<endl;
+		      player.ability[3]+=3;}
+	      if (rand() % 37 == 7){
+		      cout<<"You led a group project and learnt more about execution."<<endl;
+		      player.ability[2]+=3;}
+	      if (rand() % 37 == 8){
+		      cout<<"Shopping time for the Black Friday! You are less wealthy but you are more charming now."<<endl;
+		      player.ability[4]-=2;
+		      player.ability[2]+=5;}
+	      if (rand() % 37 == 9){
+		      cout<<"You encounter a free rider when doing group project. You have to spare some time but you learn more about execution."<<endl;
+		      player.ability[0]+=5;
+		      player.ability[2]-=2;}
+	      if (rand() % 37 == 10){
+		      cout<<"You drank with your friends at the seaside of Kennedy town. You get more social, but you are really sick after that."<<endl;
+		      player.ability[2]+=5;
+		      player.ability[1]-=3;
+		      player.ability[0]-=5;}
 	   }
 	   //(FJH)Apply fuction to happen some unexpected eventes and their influence
-	       
-	   //end of unexpected events function
            int time[4];
 	   while (true){
 	   cout<<"You have a total time of 20! How you decide to spend them?"<<endl;
@@ -202,10 +321,15 @@ int change;
 	   cout<<"the total time is wrong,please input again"<<endl;
            }
 	   //(FJH)Apply functions to improve student's ability for this semester.
- 
+ 		 
+		 player.ability[0]+=time[0];
+		 player.ability[1]+=time[3];
+		 player.ability[2]+=time[1]*(wealth/10);
+		 player.ability[3]+=time[2];
        }
 
        //(FJH)Apply functions to calculate if the student finish his targets tasks
+	 
        cout<<"Wow, you've finished"<<endl;
        //(FJH)cout what he has finished here
        //(FJH)Add what he has finished to the player.tasks 
