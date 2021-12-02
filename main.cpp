@@ -171,7 +171,7 @@ int change;
        cout<<"Now is semester "<<((player.round)%2)+1<<endl;
        cout<<"Wish you can get what you want in University life"<<endl;
        cout<<"Choose three tasks you want to finish during this semester (please input the number like (1 2 3))"<<endl;
-       cout<<"(1.join student associations 2.fall in love 3.gpa higher than 4 4.enjoy hall life 5.do part time job 6.";
+       cout<<"(1.join student associations 2.fall in love 3.gpa higher than 4 4.enjoy hall life 5.do part time job 6.faculty task";
        cout<<fac_task[fac_task_num]<<")"<<endl;
        int task;
        for (int i=0;i<3;i++){
@@ -329,13 +329,37 @@ int change;
        }
 
        //(FJH)Apply functions to calculate if the student finish his targets tasks
-	 if (player.string=="science"){}
-	 if (player.string=="engineering"){}
-	 if (player.string=="law"){}
-	 if (player.string=="art"){}
-	 if (player.string=="social science"){}
-       cout<<"Wow, you've finished"<<endl;
+	 for (int i=0;i<3;i++){
+	 	if (player.targets[i]==0){
+	 		if ((player.ability[1]+player.ability[3])>(rand()%47)){}
+		}
+		if (player.targets[i]==1){
+			if (player.ability[2]>(rand()%29)){}
+	 		}
+		if (player.targets[i]==2){
+			if ((player.ability[0]+player.ability[1])>(rand()%53)){}
+			}
+		if (player.targets[i]==3){
+			if ((player.ability[2]+player.ability[3])>(rand()%47)){}
+			}
+		if (player.targets[i]==4){
+			if (player.ability[1]>(rand()%23)){}
+			}
+	 	if (player.targets[i]==5){
+	 	if (player.faculty=="science"){
+	 	}
+	 	if (player.faculty=="engineering"){
+	 	}
+	 	if (player.faculty=="law"){
+	 	}
+		if (player.faculty=="art"){
+	 	}
+	 	if (player.faculty=="social science"){
+	 	}
+		}
+       cout<<"Wow, you've achieved"<<endl;
        //(FJH)cout what he has finished here
+	 if (player.)
        //(FJH)Add what he has finished to the player.tasks 
        player.round=player.round+1;
        cout<<"Do you want to exit now? (Yes/No)"<<endl;
@@ -384,6 +408,7 @@ int change;
  if (round==8){
     //generate a transcript here
     cout<<"You graduate!!!!"<<endl;
+	 cout<<"
     //(FJH)
  }
  
