@@ -229,6 +229,11 @@ int change;
     }
     fout.close();
  }
+ if (round==8){
+    //generate a transcript here
+    cout<<"You graduate!!!!"<<endl;
+    //(FJH)
+ }
  
  return 0;
  }
