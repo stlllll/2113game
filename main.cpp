@@ -4,9 +4,9 @@
 #include <string>
 #include <vector>
 using namespace std;
-struct student{
+struct student{  //use struct to store the information of a student.
    string name;
-   string faculty;
+   string faculty; 
    int round;
    int targets[3]; //0.join student associations 1.fall in love 2.gpa higher than 4 3.enjoy hall life 4.do part time job 5.faculty task
    int ability[5]; //0.learning 1.executive 2.charm 3.social 4.wealth
