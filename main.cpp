@@ -273,21 +273,23 @@ int change;
        
 
        //(FJH)Apply functions to calculate if the student finish his targets tasks
-	 for (int i=0;i<3;i++){
+	int finish[3]={8,8,8};
+	for (int i=0;i<3;i++){
 	 	if (player.targets[i]==0){
-	 		if ((player.ability[1]+player.ability[3])>(rand()%47)){}
+	 		if ((player.ability[1]+player.ability[3])>(rand()%47)){finish[i]=0;
+		player.tasks[0]=player.tasks[0]+1;	}
 		                         }
 		if (player.targets[i]==1){
-			if (player.ability[2]>(rand()%29)){}
+			if (player.ability[2]>(rand()%29)){finish[i]=1;}
 	 		                 }
 		if (player.targets[i]==2){
-			if ((player.ability[0]+player.ability[1])>(rand()%53)){}
+			if ((player.ability[0]+player.ability[1])>(rand()%53)){finish[i]=2;}
 			                 }
 		if (player.targets[i]==3){
-			if ((player.ability[2]+player.ability[3])>(rand()%47)){}
+			if ((player.ability[2]+player.ability[3])>(rand()%47)){finish[i]=3;}
 			                 }
 		if (player.targets[i]==4){
-			if (player.ability[1]>(rand()%23)){}
+			if (player.ability[1]>(rand()%23)){finish[i]=4;}
 			                 }
 	 	if (player.targets[i]==5){}
 	 	if (player.faculty=="science"){
@@ -301,10 +303,12 @@ int change;
 	 	if (player.faculty=="social science"){
 	 	                                     }
 	   }					     
-       cout<<"Wow, you've achieved"<<endl;
-       //(FJH)cout what he has finished here
+       for (int i=0;i<3;i++){
+           if (finish[i]!=8){
+	      //print what he has finished,that is ,what we stored in the "finish" array
+	   }
+       }
        	 
-       //(FJH)Add what he has finished to the player.tasks 
        player.round=player.round+1;
        if (player.round==8){
           cout<<"Congratulations!! you graduate!"<<endl;
