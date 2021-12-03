@@ -300,27 +300,27 @@ int change;
 	 	if (player.targets[i]==5){
 	 	if (player.faculty=="science"){
 	 	    if ((player.ability[0]+player.ability[1])>(rand()%53))
-			{finish[i]=5;player.task[5]=player.task[5]+1;}
+			{finish[i]=5;player.tasks[5]=player.tasks[5]+1;}
 			}
 	 	if (player.faculty=="engineering"){
 			if ((player.ability[0]+player.ability[1])>(rand()%53))
-			{finish[i]=5;player.task[5]=player.task[5]+1;}
+			{finish[i]=5;player.tasks[5]=player.tasks[5]+1;}
 	 	                                  }
 	 	if (player.faculty=="law"){
 			if ((player.ability[1]+player.ability[3])>(rand()%53))
-			{finishi[i]=5;player.task[5]=player.task[5]+1;}
+			{finish[i]=5;player.tasks[5]=player.tasks[5]+1;}
 	 	                          }
 		if (player.faculty=="business"){
 			if ((player.ability[1]+player.ability[3]+player.ability[2]+player.ability[4])>(rand()%79))
-			{finishi[i]=5;player.task[5]=player.task[5]+1;}
+			{finish[i]=5;player.tasks[5]=player.tasks[5]+1;}
 					  }
 		if (player.faculty=="art"){
 			if ((player.ability[0]+player.ability[1])>(rand()%53))
-			{finish[i]=5;player.task[5]=player.task[5]+1;}
+			{finish[i]=5;player.tasks[5]=player.tasks[5]+1;}
 		}
 	 	if (player.faculty=="social science"){
 			if ((player.ability[0]+player.ability[1])>(rand()%53))
-			{finish[i]=5;player.task[5]=player.task[5]+1;}
+			{finish[i]=5;player.tasks[5]=player.tasks[5]+1;}
 			}
 	 	                                     }
 	   }					     
