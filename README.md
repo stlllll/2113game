@@ -80,8 +80,8 @@ How the requirements support it:1.random numbers help with the (3) and (4) featu
                                 4.As mentioned before, we use memory.txt to save the game status. File input/output helped us read and save the game status.
                                 5.We wrote two functions in other .cpp files (transcript.cpp and print_tasks.cpp). This helped make our structure more clear, and make the debug process easier.
                                 6.This helps us better coorperate, as we can understand what each other means with standard indentation and naming. Also, it avoid bugs, as the names for variables are clear, and easy to memory.
-                                7.
+                                7.in-code documentation help us better manage the program
             
 non-standard C/C++ libraries:None
 
-Compilation and execution:
+Compilation and execution: Use "make game" command, and the makefile will help compile it, then, use "./game" to run the program.
