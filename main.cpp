@@ -337,7 +337,7 @@ int change;
 		   if (finish[i]==4)
 		   {cout<<"You pass the interview and find an intership. Great!"<<endl; }
 		   if (finish[i]==5)
-		   {cout<<"As a "<<play.faculty<<" student, you do "<<fac_task[fac_task_num]<<". Excellent!"<<endl;
+		   {cout<<"As a "<<player.faculty<<" student, you do "<<fac_task[fac_task_num]<<". Excellent!"<<endl;
 		   }//print what he has finished,that is ,what we stored in the "finish" array
 	   }
        }
