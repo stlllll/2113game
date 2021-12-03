@@ -326,7 +326,7 @@ int change;
 	   }					     
        for (int i=0;i<3;i++){
            if (finish[i]!=8){
-	      //print what he has finished,that is ,what we stored in the "finish" array
+	      cout<<""//print what he has finished,that is ,what we stored in the "finish" array
 	   }
        }
        	 
