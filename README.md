@@ -9,7 +9,7 @@ Game rules: The aim of this game is to complete as many tasks as possible.  (See
 
 Game Process: The game process includes 8 rounds, and each round consists of 3 sessions.
 Each round represents a semester, and the 3 sessions are "semester start","midterm" and "Final Exam Period" respectively.
-When a new game starts, the player needs to choose to be a student from 1.local 2.India 3.Mainland China 4.Korea, and start his/her university life with some special initial abilities and some random abilities. (See below to find details about ability)
+When a new game starts, the player needs to choose to be a student from 1.local 2.India 3.Mainland China 4.Korea, and start his/her university life with some special initial abilities. (See below to find details about ability)
 Then the player enters the fisrt round, a semester.
             
 round process:
@@ -17,13 +17,13 @@ round process:
 2.go through sessions for three times.
 
 session process:
-(1)some random events happen and may influence your decision.(Like one course have a good lecturer, and you can develop more ability spending the same time. Then you may consider spend more time on study)
-(2)decide how to distribute the time on different things (see below to find details about "spending time on things").
+(1)some random events happen and may influence you.(Like one course have a good lecturer, this may make you study easier)
+(2)decide how to distribute the time (total 20) on different things (see below to find details about "spending time on things").
 (3)According to the above decision, the player's corresponding ability get improved.
                               
-3. After the final, the player has a corresponding probability to accomplish one of the 'target tasks' according to one or some certain abilities.
+3. After the final, through the efforts, the player will have a chance to accomplish the target tasks chosen before
 
-After 8 semesters the student graduates. A transcript of the student will be generated according to accomplished tasks and outstanding abilities.
+After 8 semesters the student graduates. A transcript of the student will be generated according to accomplished tasks.
             
 The total six tasks include 
 1.Join student associations 
@@ -38,7 +38,10 @@ The sixth task is a flexible task depending on which faculty the student belongs
 2.Law students: intern at a law firm 
 3.Business students: find a job 
 4.Art&Social Science students: publish a paper
-            
+ 
+ 
+The following game rules should be hidden to the players. As the key to success of this game, following information should be explored by players themselves!!!
+
 The ability of a student includes 
 1.learning ability 
 2.executive ability 
@@ -46,41 +49,39 @@ The ability of a student includes
 4.social skills 
 5.wealth
 
-Every ability of student is measured by a score.
-Overally, with stronger abilities, the player has a higher probability to accomplish tasks at the end of a semester.
-Some tasks only depend on one aibility. For example, the probality of accomplishing 'GPA higher than 4' only depends on 'learning ability'. 
-Some tasks are multi-ability dependent. Like the probability of accomplishing 'enjoy hall life' depends on 'charm' and 'social skills'.
-The wealth is randomly generated and can be changed by some random events.
-With the same time spent on shopping, a student having higher wealth point can develop more charm.
+Every ability of student is measured by an integer.
+Overally, with stronger abilities, the player has a higher probability to accomplish certain tasks at the end of a semester.
 
-
-Special abilities:
+Special abilities (this has a really small influence):
 local student have better social skills.
-mainland student can have additional time spent on learning.
+mainland student can have more executive ability.
 Korean student have more charm.
-Indian student will develop ability faster if they choose Science or Engineering faculty.
+Indian student will have better learning ability.
 
 Spending time on certain things can improve the player's corresponding ability. 
 For instance, If a player choose to spend more time on studying, his/her learning ability will be improved. 
 In every session(start of term, midterm, final) the player will have points(time) to distribute on different things.
 Note student having higher learning ability will have more points(time) to distribute on different things.
-There are 5 things to do 
+There are 4 things to do 
 1.study 
 2.shopping 
 3.socialize 
 4.contribute to student associations 
 
-Features to implement:1.main function to run the game process
-                      2.store the game status 
-                      3.calculate the probabilities for many steps in this game
-                      4.randomly happen some unexpected things
-                      5.calculate the ability, tasks and so on
-                      5.function to display the transcript
-How the requirements support it:1.random numbers help with the probability.
-                                2.It takes some time to go through the whole game, so we store the game status in a txt file when play exits.
-                                3.To speed up compilation and reduce hardware stress, we reuse functions of 'round' and 'seesion'.
-                                4.We use some variables as sidecar variables to create more probabilities and make it more like real life.
-                                5.The number of functions used in this project is large, so using multiple files helps with coding and debugging.
-                                6.This helps us better coorperate, as we can understand what each other means with standard indentation and naming.
-                                7.We hide some easter eggs:)
+Features to implement:1.By using loop (each semester, session), input, output (to interact with the player) to run the game process
+                      2.read and save the game status (we use a struct "student" to store the information when run the game; we use a memory.txt, from where we read information at the beginning of the game, and store the information at the end of the game) 
+                      3.calculate the probabilities for many steps in this game (like, according to the ability, calculate the probability of accomplishing a certain task)
+                      4.randomly happen some unexpected things 
+                      5.calculate the ability, tasks and so on (like, spending the time on learning, then the learning ability will be improved)
+                      5.function to display the transcript 
+How the requirements support it:1.random numbers help with the (3) and (4) features, so that we can generate probabilities and unexpected things.
+                                2.We use data structure "student", which contains information about a student, including the name, faculty, round, target tasks, ability and tasks have finished.
+                                3.We use the STL container "vector" in our program, which is a way to implement the dynanmic memory. This helped us manage the memory, including reading information from memory.txt, saving information into memory.txt and so on.
+                                4.As mentioned before, we use memory.txt to save the game status. File input/output helped us read and save the game status.
+                                5.We wrote two functions in other .cpp files (transcript.cpp and print_tasks.cpp). This helped make our structure more clear, and make the debug process easier.
+                                6.This helps us better coorperate, as we can understand what each other means with standard indentation and naming. Also, it avoid bugs, as the names for variables are clear, and easy to memory.
+                                7.
             
+non-standard C/C++ libraries:None
+
+Compilation and execution:
