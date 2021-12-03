@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include "transcript.h"
+#include "print_tasks.h"
 #include <vector>
 #include <cstdlib>
 #include <ctime>
@@ -171,6 +172,7 @@ int change;
      }
  }
  if (player.round==8){
+    
     cout<<"You've already graduated"<<endl;
     cout<<"Here is your transcript"<<endl;
     print_transcript(player.tasks);
@@ -246,7 +248,7 @@ int change;
 		      player.ability[2]+=5;
 		      player.ability[1]-=3;
 		      player.ability[0]-=5;}
-	               }
+	               
 	   //(FJH)Apply fuction to happen some unexpected eventes and their influence
            int time[4];
 	   while (true){
@@ -271,7 +273,7 @@ int change;
 		 player.ability[3]+=time[2];
 		 player.ability[2]+=time[1]*(player.ability[3]/10);
        
-
+}
        //(FJH)Apply functions to calculate if the student finish his targets tasks
 	int finish[3]={8,8,8};
 	for (int i=0;i<3;i++){
@@ -312,6 +314,7 @@ int change;
        player.round=player.round+1;
        if (player.round==8){
           cout<<"Congratulations!! you graduate!"<<endl;
+	  print_tasks(player.tasks);
 	  cout<<"The Academic Services Office has generated a transcript for you"<<endl;
 	  print_transcript(player.tasks);
 	  break;
