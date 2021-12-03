@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "transcript.h"
 #include <vector>
 using namespace std;
 struct student{  //use struct to store the information of a student.
@@ -130,6 +131,11 @@ int change;
 	break;
      }
  }
+ if (player.round==8){
+    cout<<"You've already graduated"<<endl;
+    cout<<"Here is your transcript"<<endl;
+    print_transcript(player.tasks);
+ }
 
  //Now we go into a round
  while (player.round<8){
@@ -186,6 +192,12 @@ int change;
        //(FJH)cout what he has finished here
        //(FJH)Add what he has finished to the player.tasks 
        player.round=player.round+1;
+       if (player.round==8){
+          cout<<"Congratulations!! you graduate!"<<endl;
+	  cout<<"The Academic Services Office has generated a transcript for you"<<endl;
+	  print_transcript(player.tasks);
+	  break;
+       }
        cout<<"Do you want to exit now? (Yes/No)"<<endl;
        string answer;
        cin>>answer;
@@ -193,7 +205,7 @@ int change;
           break;
        }
  }
-
+ 
  //I save the game here (save function found in former codes)
  if (game=="New"){
     ofstream fout;
@@ -226,14 +238,9 @@ int change;
 	    fout<<records[i].tasks[j]<<" ";
 	}
 	fout<<endl;
-    }
+    
     fout.close();
+    }
  }
- if (round==8){
-    //generate a transcript here
-    cout<<"You graduate!!!!"<<endl;
-    //(FJH)
- }
- 
  return 0;
  }
