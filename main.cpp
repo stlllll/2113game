@@ -326,7 +326,19 @@ int change;
 	   }					     
        for (int i=0;i<3;i++){
            if (finish[i]!=8){
-	      cout<<""//print what he has finished,that is ,what we stored in the "finish" array
+	      if (finish[i]==0)
+	      {cout<<"Hooray! You join a student association!"<<endl;}
+		if (finish[i]==1)
+		{cout<<"You fall in love!"<<endl;}
+		   if (finish[i]==2)
+		   {cout<<"Congratulations! Your sem GPA is higher than 4!"<<endl;}
+		   if (finish[i]==3)
+		   {cout<<"So glad that you really enjoy your hall life."<<endl;}
+		   if (finish[i]==4)
+		   {cout<<"You pass the interview and find an intership. Great!"<<endl; }
+		   if (finish[i]==5)
+		   {cout<<"As a "<<play.faculty<<" student, you do "<<fac_task[fac_task_num]<<". Excellent!"<<endl;
+		   }//print what he has finished,that is ,what we stored in the "finish" array
 	   }
        }
        	 
