@@ -112,10 +112,18 @@ int change;
       //(FJH)Apply a function to initialize the ability for the student basing on his/her background
       while  (true){
       cin>>background;
-      if (background=="Local"){break;}
-      else if (background=="Mainland"){break;}
-      else if (background=="India"){break;}
-      else if (background=="Korea"){break;}
+      if (background=="Local"){
+      player.ability[3]=player.ability[3]+5;
+      break;}
+      else if (background=="Mainland"){
+      player.ability[1]=player.ability[1]+5;
+      break;}
+      else if (background=="India"){
+      player.ability[0]=player.ability[0]+5;
+      break;}
+      else if (background=="Korea"){
+      player.ability[2]=player.ability[2]+5;
+      break;}
       else{cout<<"Wrong input! please input a right format background. Note that you need to type in a word with uppercase first character."<<endl;}
       }
       // end of ability initialization based on background
@@ -200,7 +208,7 @@ int change;
 	      cout<<"The final exam will be held in two days!!!"<<endl;
 	            }
 	   int random;
-	   random=rand() % 37+1;
+	   random=rand() %10 +1;
            if (random == 1){
 		      cout<<"You are rewarded for scholarship! You weatlth inceases."<<endl;
 		      player.ability[4] += 5;}
