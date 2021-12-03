@@ -282,20 +282,25 @@ int change;
 		player.tasks[0]=player.tasks[0]+1;	}
 		                         }
 		if (player.targets[i]==1){
-			if (player.ability[2]>(rand()%29)){finish[i]=1;}
+			if (player.ability[2]>(rand()%29))
+			{finish[i]=1;player.tasks[1]=player.tasks[1]+1;}
 	 		                 }
 		if (player.targets[i]==2){
-			if ((player.ability[0]+player.ability[1])>(rand()%53)){finish[i]=2;}
+			if ((player.ability[0]+player.ability[1])>(rand()%53))
+			{finish[i]=2;player.tasks[2]=player.tasks[2]+1;}
 			                 }
 		if (player.targets[i]==3){
-			if ((player.ability[2]+player.ability[3])>(rand()%47)){finish[i]=3;}
+			if ((player.ability[2]+player.ability[3])>(rand()%47))
+			{finish[i]=3;player.tasks[3]=player.tasks[3]+1;}
 			                 }
 		if (player.targets[i]==4){
-			if (player.ability[1]>(rand()%23)){finish[i]=4;}
+			if (player.ability[1]>(rand()%23))
+			{finish[i]=4;player.tasks[4]=player.tasks[4]+1;}
 			                 }
-	 	if (player.targets[i]==5){}
+	 	if (player.targets[i]==5){
 	 	if (player.faculty=="science"){
-	 	                              }
+	 	    
+			}
 	 	if (player.faculty=="engineering"){
 	 	                                  }
 	 	if (player.faculty=="law"){
