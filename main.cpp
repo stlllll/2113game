@@ -94,12 +94,12 @@ int change;
 		   cout<<"6. Social Science Faculty"<<endl;
 		   string faculty_num;
 		   cin>>faculty_num;
-		   if (faculty_num==1){player.faculty="science"; break;}
-		   else if (faculty_num==2){player.faculty="engineering"; break;}
-		   else if (faculty_num==3){player.faculty="law"; break;}
-		   else if (faculty_num==4){player.faculty="business"; break;}
-		   else if (faculty_num==5){player.faculty="art"; break;}
-		   else if (faculty_num==6){player.faculty="social science"; break;}
+		   if (faculty_num=="1"){player.faculty="science"; break;}
+		   else if (faculty_num=="2"){player.faculty="engineering"; break;}
+		   else if (faculty_num=="3"){player.faculty="law"; break;}
+		   else if (faculty_num=="4"){player.faculty="business"; break;}
+		   else if (faculty_num=="5"){player.faculty="art"; break;}
+		   else if (faculty_num=="6"){player.faculty="social science"; break;}
 		   else {cout<<"Wrong input! Think again before you choose your faculty. Note that you need to type in number but not alphabet"<<endl;}
 	   }
       //The end of this faculty choosing function	   
